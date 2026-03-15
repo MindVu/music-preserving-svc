@@ -2,10 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Music Preserving SVC</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Preserving SVC Demo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <h1>Music Preserving Singing Voice Conversion</h1>
-    <p>Welcome to the project page for MindVu's SVC toolkit.</p>
+    <main class="container">
+        <h1>Beyond Vocal-Only: Music-Preserving Singing Voice Conversion via Mixture
+    of Vocal and Music Representations</h1>
+        <h2>
+            <b>Abstract</b>
+        </h2>
+        <h3>
+            Singing voice conversion (SVC) aims to transform a source singer’s voice into a target singer while preserving lyrical content and melody. However, existing SVC systems output only converted voice and ignore background music, limiting their applicability in real-world music production. In practice, users often wish to convert the singing voice directly from mixed audio while retaining the accompaniment to obtain a ready-to-release song. In this paper, we propose a singing voice conversion with preserved background music system which consists of vocal–music separation, feature extraction for both signals, an SVC model jointly conditioned on vocal and background music representations, and a universal vocoder. Furthermore, we introduce a data augmentation strategy to improve voice clarity and robustness. Both objective and subjective evaluations show that our framework performs well in both voice conversion and accompaniment signal preservation.
+        </h3>
+        <section class="demo-block">
+            <h2>Source: Justin Bieber</h2>
+            <div class="grid header-row">
+                <div class="cell method">Method</div>
+                <div class="cell">Alicia Keys</div>
+                <div class="cell">James Taylor</div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">Target</div>
+                <div class="cell"><audio controls preload="none" src="Asset/Target/aliciakeys.mp3"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/Target/JamesTaylor.mp3"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">Source Original</div>
+                <div class="cell span-2"><audio controls preload="none" src="Asset/JB/original.wav"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">SVC</div>
+                <div class="cell"><audio controls preload="none" src="Asset/JB/SVC/output_aliciakeys.wav"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/JB/SVC/output_jamestaylor.wav"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">SVCMP</div>
+                <div class="cell"><audio controls preload="none" src="Asset/JB/SVCMP/output_aliciakeys.wav"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/JB/SVCMP/output_JamesTaylor.wav"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">SVCMP + AUG</div>
+                <div class="cell"><audio controls preload="none" src="Asset/JB/SVCMP_AUG/output_aliciakeys.wav"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/JB/SVCMP_AUG/output_JamesTaylor.wav"></audio></div>
+            </div>
+        </section>
+
+        <section class="demo-block">
+            <h2>Source: Taylor Swift</h2>
+            <div class="grid header-row">
+                <div class="cell method">Method</div>
+                <div class="cell">Alicia Keys</div>
+                <div class="cell">James Taylor</div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">Target</div>
+                <div class="cell"><audio controls preload="none" src="Asset/Target/aliciakeys.mp3"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/Target/JamesTaylor.mp3"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">Source Original</div>
+                <div class="cell span-2"><audio controls preload="none" src="Asset/Taylor/original.wav"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">SVC</div>
+                <div class="cell"><audio controls preload="none" src="Asset/Taylor/SVC/output_aliciakeys.wav"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/Taylor/SVC/output_JamesTaylor.wav"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">SVCMP</div>
+                <div class="cell"><audio controls preload="none" src="Asset/Taylor/SVCMP/output_aliciakeys.wav"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/Taylor/SVCMP/output_JamesTaylor.wav"></audio></div>
+            </div>
+
+            <div class="grid">
+                <div class="cell method">SVCMP + AUG</div>
+                <div class="cell"><audio controls preload="none" src="Asset/Taylor/SVCMP_AUG/output_aliciakeys.wav"></audio></div>
+                <div class="cell"><audio controls preload="none" src="Asset/Taylor/SVCMP_AUG/output_JamesTaylor.wav"></audio></div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
